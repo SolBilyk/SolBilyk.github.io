@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Sol Bilyk - Desarrolladora Frontend</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <h2>Maria Sol Bilyk</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#educacion" class="nav-link">Educación</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hola, soy <span class="highlight">María Sol Bilyk</span></h1>
+                <h2>Desarrolladora Frontend & Diseñadora UX/UI</h2>
+                <p>Especializada en crear experiencias digitales únicas y funcionales que combinan diseño atractivo con código limpio y eficiente. Mi objetivo es transformar ideas en realidad digital, combinando la estética del diseño con la funcionalidad del código.</p>
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#contacto" class="btn btn-secondary">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <img src="Sol.jpg" alt="María Sol" class="profile-img">
+                    <div class="floating-elements">
+                        <div class="floating-icon" style="--delay: 0s">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="floating-icon" style="--delay: 1s">
+                            <i class="fab fa-js-square"></i>
+                        </div>
+                        <div class="floating-icon" style="--delay: 2s">
+                            <i class="fab fa-css3-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>[DESCRIPCIÓN PERSONAL - Aquí puedes escribir sobre tu pasión por el desarrollo frontend, tu enfoque en el diseño y la experiencia de usuario, y cómo combinas creatividad con tecnología]</p>
+                    <p>[EXPERIENCIA Y MOTIVACIÓN - Menciona tu experiencia, lo que te motiva en el desarrollo web y tus objetivos profesionales]</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3>[X]</h3>
+                            <p>Proyectos Completados</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>[X]</h3>
+                            <p>Tecnologías Dominadas</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>[X]</h3>
+                            <p>Años de Experiencia</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills-preview">
+                    <h3>Especialidades</h3>
+                    <ul>
+                        <li><i class="fas fa-code"></i> Desarrollo Frontend</li>
+                        <li><i class="fas fa-paint-brush"></i> Diseño UX/UI</li>
+                        <li><i class="fas fa-mobile-alt"></i> Diseño Responsive</li>
+                        <li><i class="fas fa-server"></i> Conocimientos Backend</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades & Stack Tecnológico</h2>
+            <div class="skills-content">
+                <div class="skills-category">
+                    <h3><i class="fas fa-code"></i> Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                            <div class="skill-level" data-level="[NIVEL-HTML]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                            <div class="skill-level" data-level="[NIVEL-CSS]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript</span>
+                            <div class="skill-level" data-level="[NIVEL-JS]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                            <div class="skill-level" data-level="[NIVEL-REACT]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-vue"></i>
+                            <span>Vue.js</span>
+                            <div class="skill-level" data-level="[NIVEL-VUE]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-sass"></i>
+                            <span>Sass</span>
+                            <div class="skill-level" data-level="[NIVEL-SASS]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="fas fa-paint-brush"></i> Diseño & UX/UI</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                            <div class="skill-level" data-level="[NIVEL-FIGMA]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Adobe XD</span>
+                            <div class="skill-level" data-level="[NIVEL-XD]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <span>Prototipado</span>
+                            <div class="skill-level" data-level="[NIVEL-PROTO]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-users"></i>
+                            <span>User Research</span>
+                            <div class="skill-level" data-level="[NIVEL-RESEARCH]"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-category">
+                    <h3><i class="fas fa-server"></i> Backend & Herramientas</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                            <div class="skill-level" data-level="[NIVEL-NODE]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                            <div class="skill-level" data-level="[NIVEL-MONGO]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                            <div class="skill-level" data-level="[NIVEL-GIT]"></div>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                            <div class="skill-level" data-level="[NIVEL-GITHUB]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="educacion" class="education">
+        <div class="container">
+            <h2 class="section-title">Educación & Formación</h2>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>[NOMBRE DEL CURSO UX/UI]</h3>
+                        <h4>[INSTITUCIÓN]</h4>
+                        <span class="timeline-date">[AÑO]</span>
+                        <p>[DESCRIPCIÓN DEL CURSO - Menciona las herramientas aprendidas, proyectos realizados, y cómo este curso complementa tu perfil de frontend developer]</p>
+                        <div class="course-skills">
+                            <span class="skill-tag">User Research</span>
+                            <span class="skill-tag">Prototipado</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Design Thinking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>[CURSO/CARRERA PRINCIPAL]</h3>
+                        <h4>[INSTITUCIÓN]</h4>
+                        <span class="timeline-date">[AÑO]</span>
+                        <p>[DESCRIPCIÓN - Enfócate en cómo esta formación te dio las bases para el desarrollo frontend y menciona los conocimientos de backend adquiridos]</p>
+                        <div class="course-skills">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>[OTRO CURSO RELEVANTE]</h3>
+                        <h4>[INSTITUCIÓN/PLATAFORMA]</h4>
+                        <span class="timeline-date">[AÑO]</span>
+                        <p>[DESCRIPCIÓN DEL CURSO]</p>
+                        <div class="course-skills">
+                            <span class="skill-tag">[SKILL 1]</span>
+                            <span class="skill-tag">[SKILL 2]</span>
+                            <span class="skill-tag">[SKILL 3]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications">
+                <h3>Certificaciones</h3>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>[NOMBRE CERTIFICACIÓN]</h4>
+                        <p>[INSTITUCIÓN]</p>
+                        <span>[AÑO]</span>
+                    </div>
+                    <div class="cert-item">
+                        <i class="fas fa-certificate"></i>
+                        <h4>[NOMBRE CERTIFICACIÓN]</h4>
+                        <p>[INSTITUCIÓN]</p>
+                        <span>[AÑO]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="fraganza.png" alt="Fraganza">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="[LINK-DEMO]" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="[LINK-GITHUB]" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Fraganza</h3>
+                        <p>[DESCRIPCIÓN DEL PROYECTO - Explica qué hace, qué tecnologías usaste, y qué desafíos resolviste]</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">[TECH 1]</span>
+                            <span class="tech-tag">[TECH 2]</span>
+                            <span class="tech-tag">[TECH 3]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="roti.png" alt="Rotisería Bilyk">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://rotiseriabilyk.online/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="[LINK-GITHUB]" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Rotisería Bilyk</h3>
+                        <p>[DESCRIPCIÓN DEL PROYECTO]</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">[TECH 1]</span>
+                            <span class="tech-tag">[TECH 2]</span>
+                            <span class="tech-tag">[TECH 3]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Puedes.png" alt="Proyecto PUEDES">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://puedesdeploy.onrender.com/" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="[LINK-GITHUB]" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Proyecto PUEDES</h3>
+                        <p>[DESCRIPCIÓN DEL PROYECTO]</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">[TECH 1]</span>
+                            <span class="tech-tag">[TECH 2]</span>
+                            <span class="tech-tag">[TECH 3]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">¡Trabajemos Juntos!</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>¿Tienes un proyecto en mente?</h3>
+                    <p>Estoy siempre abierta a nuevas oportunidades y colaboraciones. Si tienes un proyecto interesante o simplemente quieres charlar sobre desarrollo frontend y diseño, ¡no dudes en contactarme!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:[TU-EMAIL]">[TU-EMAIL]</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="[TU-LINKEDIN]" target="_blank">[TU-NOMBRE-LINKEDIN]</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <div>
+                                <h4>GitHub</h4>
+                                <a href="[TU-GITHUB]" target="_blank">[TU-USERNAME-GITHUB]</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Tu email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Asunto" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 [TU NOMBRE]. Diseñado y desarrollado con 💜 por mí.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="[TU-LINKEDIN]" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="[TU-GITHUB]" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="[TU-BEHANCE]" target="_blank"><i class="fab fa-behance"></i></a>
+                    <a href="[TU-DRIBBBLE]" target="_blank"><i class="fab fa-dribbble"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
