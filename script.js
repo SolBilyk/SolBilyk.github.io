@@ -207,6 +207,17 @@ const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     const statusEl = document.getElementById('form-status');
     contactForm.addEventListener('submit', async function(e) {
+        // Si está marcado para envío nativo, no interceptar
+        if (this.dataset.native === '1') {
+            return; // permitir submit HTML normal
+        }
+        // Modo debug: envío nativo directo a Formspree (agregar ?fsnative=1 a la URL)
+        const useNative = new URLSearchParams(window.location.search).has('fsnative');
+        if (useNative) {
+            if (statusEl) statusEl.textContent = 'Enviando (modo nativo)...';
+            // No prevenir el submit: permitir navegación a la página de éxito de Formspree
+            return; 
+        }
         e.preventDefault();
 
         const formData = new FormData(this);
@@ -277,6 +288,13 @@ if (contactForm) {
             showNotification('No se pudo enviar. Revisa tu conexión e intenta otra vez.', 'error');
             if (statusEl) statusEl.textContent = 'No se pudo enviar. Revisa tu conexión e intenta otra vez.';
             console.error('Fetch error:', error);
+            // Fallback: intentar envío nativo (puede evitar bloqueos de extensiones)
+            try {
+                this.dataset.native = '1';
+                this.submit();
+            } catch (e2) {
+                console.error('Fallback submit error:', e2);
+            }
         } finally {
             if (submitBtn) {
                 submitBtn.textContent = originalText || 'Enviar Mensaje';
