@@ -405,7 +405,9 @@
                 </div>
 
                 <div class="contact-form">
-                    <form>
+                    <form id="contact-form" action="https://formspree.io/f/xzzkgzjo" method="POST">
+                        <!-- Honeypot anti-spam -->
+                        <input type="text" name="_honeypot" id="hp-field" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute; left:-9999px; opacity:0; height:0; width:0;" />
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Tu nombre" required>
                         </div>
@@ -420,6 +422,7 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
                     </form>
+                    <p id="form-status"></p>
                 </div>
             </div>
         </div>

@@ -205,42 +205,77 @@ window.addEventListener('load', createFloatingParticles);
 // ===== FORMULARIO DE CONTACTO =====
 const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    const statusEl = document.getElementById('form-status');
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
-        // Obtener datos del formulario
+
         const formData = new FormData(this);
+        // Honeypot: si está completo, abortar silenciosamente
+        const hpField = document.getElementById('hp-field');
+        if (hpField && hpField.value && hpField.value.trim() !== '') {
+            // Opcional: log interno para depurar
+            console.warn('Honeypot activado, envío bloqueado.');
+            return;
+        }
         const name = formData.get('name');
         const email = formData.get('email');
         const subject = formData.get('subject');
         const message = formData.get('message');
-        
+
         // Validación básica
         if (!name || !email || !subject || !message) {
             showNotification('Por favor, completa todos los campos.', 'error');
+            if (statusEl) statusEl.textContent = 'Por favor, completa todos los campos.';
             return;
         }
-        
+
         // Validar email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             showNotification('Por favor, ingresa un email válido.', 'error');
+            if (statusEl) statusEl.textContent = 'Por favor, ingresa un email válido.';
             return;
         }
-        
-        // Simular envío (aquí integrarías con tu backend)
+
         const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        
-        submitBtn.textContent = 'Enviando...';
-        submitBtn.disabled = true;
-        
-        setTimeout(() => {
-            showNotification('¡Mensaje enviado correctamente! Te responderé pronto.', 'success');
-            this.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 2000);
+        const originalText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) {
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+        }
+        if (statusEl) statusEl.textContent = 'Enviando...';
+
+        try {
+            const res = await fetch(this.action, {
+                method: this.method || 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+                showNotification('¡Mensaje enviado correctamente! Te responderé pronto.', 'success');
+                if (statusEl) statusEl.textContent = '¡Mensaje enviado! Gracias por contactarme.';
+                this.reset();
+                // Redirección con JS a la sección de contacto
+                setTimeout(() => {
+                    // Mantener al usuario en la misma página anclado a #contacto
+                    window.location.hash = 'contacto';
+                }, 600);
+            } else {
+                const data = await res.json().catch(() => null);
+                const err = data && data.errors ? data.errors.map(e => e.message).join(', ') : 'Hubo un error al enviar. Intenta nuevamente.';
+                showNotification(err, 'error');
+                if (statusEl) statusEl.textContent = err;
+            }
+        } catch (error) {
+            showNotification('No se pudo enviar. Revisa tu conexión e intenta otra vez.', 'error');
+            if (statusEl) statusEl.textContent = 'No se pudo enviar. Revisa tu conexión e intenta otra vez.';
+        } finally {
+            if (submitBtn) {
+                submitBtn.textContent = originalText || 'Enviar Mensaje';
+                submitBtn.disabled = false;
+            }
+        }
     });
 }
 
