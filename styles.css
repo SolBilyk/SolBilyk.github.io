@@ -631,7 +631,25 @@ body {
 .cert-item i {
     font-size: 2rem;
     color: var(--accent-yellow);
-    margin-bottom: 1rem;
+    margin-bottom: 2%;
+}
+
+/* Miniaturas de imágenes en certificaciones */
+.cert-item img,
+.cert-item i img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    max-height: 120px; /* controla que sea miniatura */
+    height: auto;
+    object-fit: contain; /* evita recortes dentro de la card */
+    margin: 0 auto 0.2rem; /* centra la imagen y mantiene el espaciado inferior */
+    border-radius: 8px;
+}
+
+/* Evita cualquier desbordamiento visual en las cards */
+.cert-item {
+    overflow: hidden;
 }
 
 .cert-item h4 {
