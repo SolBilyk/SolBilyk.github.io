@@ -237,6 +237,10 @@ if (contactForm) {
             return;
         }
 
+        // Añadir metadatos para mejorar la entrega en Formspree
+        formData.set('_subject', `Nuevo mensaje de ${name}: ${subject}`);
+        formData.set('_replyto', email);
+
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn ? submitBtn.textContent : '';
         if (submitBtn) {
@@ -263,13 +267,16 @@ if (contactForm) {
                 }, 600);
             } else {
                 const data = await res.json().catch(() => null);
-                const err = data && data.errors ? data.errors.map(e => e.message).join(', ') : 'Hubo un error al enviar. Intenta nuevamente.';
+                const errDetail = data && data.errors ? data.errors.map(e => e.message).join(', ') : await res.text().catch(() => '');
+                const err = `Error ${res.status}: ${errDetail || 'Hubo un error al enviar. Intenta nuevamente.'}`;
+                console.error('Formspree error:', { status: res.status, data });
                 showNotification(err, 'error');
                 if (statusEl) statusEl.textContent = err;
             }
         } catch (error) {
             showNotification('No se pudo enviar. Revisa tu conexión e intenta otra vez.', 'error');
             if (statusEl) statusEl.textContent = 'No se pudo enviar. Revisa tu conexión e intenta otra vez.';
+            console.error('Fetch error:', error);
         } finally {
             if (submitBtn) {
                 submitBtn.textContent = originalText || 'Enviar Mensaje';
