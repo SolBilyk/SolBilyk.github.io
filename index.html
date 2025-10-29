@@ -407,7 +407,9 @@
                 <div class="contact-form">
                     <form id="contact-form" action="https://formspree.io/f/xzzkgzjo" method="POST">
                         <!-- Honeypot anti-spam -->
-                        <input type="text" name="_honeypot" id="hp-field" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute; left:-9999px; opacity:0; height:0; width:0;" />
+                        <input type="text" name="_gotcha" id="hp-field" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute; left:-9999px; opacity:0; height:0; width:0;" />
+                        <!-- Asunto personalizado para el correo -->
+                        <input type="hidden" name="_subject" value="Nuevo mensaje desde el Portfolio" />
                         <div class="form-group">
                             <input type="text" id="name" name="name" placeholder="Tu nombre" required>
                         </div>
